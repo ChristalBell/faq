@@ -16,13 +16,27 @@ const QuestionAccordion = ({ questionAnswer }: Props) => {
   const [showAnswer, setShowAnswer] = useState(false);
   const { question, answer } = questionAnswer;
   return (
-    <Box>
-      <Box sx={{ display: "flex" }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        width: "36.25rem",
+      }}
+    >
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          fontWeight: 600,
+          "&:hover": { color: "gold" },
+        }}
+      >
         <Typography>{question}</Typography>
         <Button onClick={() => setShowAnswer(!showAnswer)}>+</Button>
       </Box>
 
-      <Box sx={{ width: "32.5rem", display: showAnswer ? "flex" : "none " }}>
+      <Box sx={{ width: "36.25rem", display: showAnswer ? "flex" : "none " }}>
         <Typography>{answer}</Typography>
       </Box>
     </Box>
