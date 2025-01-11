@@ -7,30 +7,7 @@ import data from "../data/data.json";
 
 const FAQContainer = () => {
   const [questionAnswer, setQuestionAnswer] = useState(data);
-  useEffect(() => {
-    fetch("../data/data.json")
-      .then((response) => response.json())
-      .then((json) => setQuestionAnswer(json));
-  });
 
-  // const questionAnswer = [
-  //   {
-  //     question: "What is the Elevation Experience?",
-  //     answer: "Sustainable lifestyle changes and habits ",
-  //   },
-  //   {
-  //     question: "What is the Elevation Experience?",
-  //     answer: "Sustainable lifestyle changes and habits ",
-  //   },
-  //   {
-  //     question: "What is the Elevation Experience?",
-  //     answer: "Sustainable lifestyle changes and habits ",
-  //   },
-  //   {
-  //     question: "What is the Elevation Experience?",
-  //     answer: "Sustainable lifestyle changes and habits ",
-  //   },
-  // ];
   return (
     <Box
       sx={{
@@ -38,10 +15,15 @@ const FAQContainer = () => {
         padding: "2rem",
         borderRadius: "2rem",
         width: "37.5rem",
-        height: "35.3125rem",
+        height: "55vh",
       }}
     >
-      <Typography variant="h1">FAQs</Typography>
+      <Typography
+        variant="h1"
+        sx={{ display: "flex", justifyContent: "center", marginBottom: "3rem" }}
+      >
+        FAQs
+      </Typography>
       {questionAnswer.map((qA) => {
         return <QuestionAccordion questionAnswer={qA} key={qA.question} />;
       })}

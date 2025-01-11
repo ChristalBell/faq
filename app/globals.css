@@ -4,5 +4,13 @@ body {
   margin: 0;
   overflow: hidden;
   height: 100vh;
-  background-color: rgb(140, 251, 251);
+  background-color: #abc5dc;
+}
+
+.golden {
+  background-color: #fec722;
+}
+
+.deepBlue {
+  background-color: #3c7ab1;
 }

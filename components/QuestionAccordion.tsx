@@ -29,15 +29,39 @@ const QuestionAccordion = ({ questionAnswer }: Props) => {
           display: "flex",
           justifyContent: "space-between",
           fontWeight: 600,
-          "&:hover": { color: "gold" },
+          "&:hover": { color: " #fec722" },
         }}
       >
-        <Typography>{question}</Typography>
-        <Button onClick={() => setShowAnswer(!showAnswer)}>+</Button>
+        <Typography sx={{ marginTop: "1rem", fontWeight: "bold" }}>
+          {question}
+        </Typography>
+        <Button
+          className="golden"
+          sx={{
+            borderRadius: "10rem",
+            height: "3.75rem",
+            padding: "0",
+            color: "#FFF",
+            fontWeight: "bold",
+            marginBottom: ".5rem",
+
+            "&:hover": { color: "#ff7414" },
+          }}
+          onClick={() => setShowAnswer(!showAnswer)}
+        >
+          +
+        </Button>
       </Box>
 
-      <Box sx={{ width: "36.25rem", display: showAnswer ? "flex" : "none " }}>
-        <Typography>{answer}</Typography>
+      <Box
+        sx={{
+          width: "36.25rem",
+          display: showAnswer ? "flex" : "none ",
+        }}
+      >
+        <Typography sx={{ fontSize: ".75rem", width: "33.5vw" }}>
+          {answer}
+        </Typography>
       </Box>
     </Box>
   );
